@@ -32,7 +32,7 @@ python -m http.server 8000
 3. 執行 `python tools/build.py`，產生新的文章頁和首頁卡片。
 4. 檢查分類、搜尋、文章內容與返回連結，再提交修改。
 
-`index.html` 和 `notes/` 是產生的結果。內容請改 `content/notes.json`，版面請改 `templates/note.html`，共用樣式放在 `assets/style.css`。
+`index.html` 和 `notes/` 是產生的結果。內容請改 `content/notes.json`，首頁版面請改 `templates/index.html`，文章版面請改 `templates/note.html`，共用樣式放在 `assets/style.css`。
 
 Windows 也可以使用 `py`，macOS 或 Linux 可依環境使用 `python3`。
 
@@ -43,3 +43,7 @@ Windows 也可以使用 `py`，macOS 或 Linux 可依環境使用 `python3`。
 ## AI 協作
 
 本專案由 ChatGPT 協助整理規則、撰寫初版程式與筆記。專案規則保存在 `AGENTS.md`，之後新增內容時可繼續使用。
+
+## 程式碼排版
+
+HTML、CSS、JavaScript 與 JSON 使用 2 個空白縮排，Python 使用 4 個空白。設定保存在 `.editorconfig` 與 `.prettierrc.json`。`index.html` 和 `notes/` 由建置程式輸出縮排，格式檢查以共用範本為準；重新建置不需要安裝格式工具。

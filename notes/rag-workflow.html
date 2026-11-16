@@ -1,1 +1,68 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="整理資料、找出相關片段，再請模型依照找到的內容回答。"><title>RAG 如何找到資料再回答｜Study Notes</title><link rel="stylesheet" href="../assets/style.css"></head><body><a class="skip" href="#main">跳到內容</a><header class="top"><a class="brand" href="../index.html">S<span>Study Notes</span></a><a href="../index.html">返回筆記總覽 ↗</a></header><main id="main" class="article"><p class="eyebrow">課程筆記 / RAG</p><h1>RAG 如何找到資料再回答</h1><p class="intro">整理資料、找出相關片段，再請模型依照找到的內容回答。</p><div class="meta">更新日期：2026-11-16</div><div class="article-layout"><nav class="toc" aria-label="文章目錄"><strong>本篇內容</strong><a href="#goal">01 學習目標</a><a href="#concepts">02 核心概念</a><a href="#example">03 實作範例</a><a href="#pitfalls">04 常見錯誤</a><a href="#practice">05 練習與反思</a></nav><div><section id="goal"><h2>學習目標</h2><p>能用自己的話說明 RAG 的資料準備、檢索與回答流程。</p></section><section id="concepts"><h2>核心概念</h2><p>RAG（檢索增強生成）會先找資料，再讓模型回答。常見做法是把文件切成片段並建立索引；收到問題後，找出相關片段，把它們和問題一起交給模型。檢索可以用向量搜尋，也可以採用其他方式。</p></section><section id="example"><h2>實作範例</h2><p>問題：資料庫中的哪種食物蛋白質較高？系統先找出有關的營養資料，再在確認每 100 公克、可食部分等比較基準一致後回答。資料未列出的食物，不自行補上數值。</p></section><section id="pitfalls"><h2>常見錯誤</h2><p>相似度高不代表資料一定正確，也可能沒找到真正需要的內容。比較營養數值前，要先確認單位、每份重量和資料日期。即使有檢索資料，最後的回答仍可能出錯。</p></section><section id="practice"><h2>練習與反思</h2><p>準備三段資料，分別問一題資料中找得到答案的問題，以及一題資料不足的問題。檢查回答有沒有引用正確內容，資料不足時有沒有直接說明。</p></section><div class="reading"><label><input type="checkbox" id="read"> 我已閱讀這篇筆記</label><p id="storage-status" aria-live="polite">閱讀紀錄僅存於目前瀏覽器。</p></div></div></div><a class="back" href="../index.html">← 瀏覽其他筆記</a></main><footer>Study Notes · 生成式 AI 課程筆記</footer><script src="../assets/reading.js"></script></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="整理資料、找出相關片段，再請模型依照找到的內容回答。" />
+    <title>RAG 如何找到資料再回答｜Study Notes</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">跳到內容</a>
+    <header class="top">
+      <a class="brand" href="../index.html">
+        S
+        <span>Study Notes</span>
+      </a>
+      <a href="../index.html">返回筆記總覽 ↗</a>
+    </header>
+    <main id="main" class="article">
+      <p class="eyebrow">課程筆記 / RAG</p>
+      <h1>RAG 如何找到資料再回答</h1>
+      <p class="intro">整理資料、找出相關片段，再請模型依照找到的內容回答。</p>
+      <div class="meta">更新日期：2026-11-16</div>
+      <div class="article-layout">
+        <nav class="toc" aria-label="文章目錄">
+          <strong>本篇內容</strong>
+          <a href="#goal">01 學習目標</a>
+          <a href="#concepts">02 核心概念</a>
+          <a href="#example">03 實作範例</a>
+          <a href="#pitfalls">04 常見錯誤</a>
+          <a href="#practice">05 練習與反思</a>
+        </nav>
+        <div>
+          <section id="goal">
+            <h2>學習目標</h2>
+            <p>能用自己的話說明 RAG 的資料準備、檢索與回答流程。</p>
+          </section>
+          <section id="concepts">
+            <h2>核心概念</h2>
+            <p>RAG（檢索增強生成）會先找資料，再讓模型回答。常見做法是把文件切成片段並建立索引；收到問題後，找出相關片段，把它們和問題一起交給模型。檢索可以用向量搜尋，也可以採用其他方式。</p>
+          </section>
+          <section id="example">
+            <h2>實作範例</h2>
+            <p>問題：資料庫中的哪種食物蛋白質較高？系統先找出有關的營養資料，再在確認每 100 公克、可食部分等比較基準一致後回答。資料未列出的食物，不自行補上數值。</p>
+          </section>
+          <section id="pitfalls">
+            <h2>常見錯誤</h2>
+            <p>相似度高不代表資料一定正確，也可能沒找到真正需要的內容。比較營養數值前，要先確認單位、每份重量和資料日期。即使有檢索資料，最後的回答仍可能出錯。</p>
+          </section>
+          <section id="practice">
+            <h2>練習與反思</h2>
+            <p>準備三段資料，分別問一題資料中找得到答案的問題，以及一題資料不足的問題。檢查回答有沒有引用正確內容，資料不足時有沒有直接說明。</p>
+          </section>
+          <div class="reading">
+            <label>
+              <input type="checkbox" id="read" />
+              我已閱讀這篇筆記
+            </label>
+            <p id="storage-status" aria-live="polite">閱讀紀錄僅存於目前瀏覽器。</p>
+          </div>
+        </div>
+      </div>
+      <a class="back" href="../index.html">← 瀏覽其他筆記</a>
+    </main>
+    <footer>Study Notes · 生成式 AI 課程筆記</footer>
+    <script src="../assets/reading.js"></script>
+  </body>
+</html>
