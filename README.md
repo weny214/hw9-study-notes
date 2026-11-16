@@ -2,6 +2,11 @@
 
 生成式 AI 課程的 Homework 9。網站整理 Prompt、RAG 和 AGENTS.md 三個主題，並用同一份範本產生筆記頁。
 
+## 連結
+
+- 網站：https://weny214.github.io/hw9-study-notes/
+- GitHub：https://github.com/weny214/hw9-study-notes
+
 ## 功能
 
 - 首頁可以依分類或關鍵字找筆記。
