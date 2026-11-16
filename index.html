@@ -1,1 +1,198 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="整理 Prompt、RAG 和 AGENTS.md 的課程筆記，附上範例與練習。"><title>Study Notes｜生成式 AI 學習筆記</title><link rel="stylesheet" href="assets/style.css"></head><body><a class="skip" href="#main">跳到內容</a><header class="top"><a class="brand" href="index.html">S<span>Study Notes</span></a><a href="AGENTS.md">專案規則 AGENTS.md ↗</a></header><main id="main" class="wrap"><section class="hero"><div><p class="eyebrow">生成式 AI 課程筆記</p><h1>生成式 AI<br><em>學習筆記</em></h1><p class="intro">這裡整理 Prompt、RAG 和專案規則的重點。每篇都有說明、例子和練習，方便之後複習。</p></div><aside class="hero-side"><p>目前整理的主題</p><strong>Prompt、RAG<br>與 AGENTS.md</strong><div class="steps"><span>01 重點說明</span><span>02 範例</span><span>03 練習</span></div></aside></section><section aria-labelledby="notes-title"><div class="section-head"><h2 id="notes-title">學習筆記</h2><span id="count" aria-live="polite">顯示 3 篇筆記</span></div><div class="toolbar"><div class="filters" aria-label="筆記分類"><button type="button" data-filter="全部" aria-pressed="true">全部</button><button type="button" data-filter="Prompt" aria-pressed="false">Prompt</button><button type="button" data-filter="RAG" aria-pressed="false">RAG</button><button type="button" data-filter="AI 協作" aria-pressed="false">AI 協作</button></div><label><span class="sr">搜尋筆記</span><input id="search" type="search" placeholder="搜尋標題或關鍵字…"></label></div><div class="grid"><article class="card" data-category="Prompt"><div class="section-head"><span class="num">01</span><span class="tag">Prompt</span></div><h3>Prompt 怎麼寫比較清楚</h3><p>把背景、需求和格式說清楚，再檢查 AI 有沒有照著回答。</p><a href="notes/prompt-basics.html">閱讀筆記<span class="sr">：Prompt 怎麼寫比較清楚</span></a></article><article class="card" data-category="RAG"><div class="section-head"><span class="num">02</span><span class="tag">RAG</span></div><h3>RAG 如何找到資料再回答</h3><p>整理資料、找出相關片段，再請模型依照找到的內容回答。</p><a href="notes/rag-workflow.html">閱讀筆記<span class="sr">：RAG 如何找到資料再回答</span></a></article><article class="card" data-category="AI 協作"><div class="section-head"><span class="num">03</span><span class="tag">AI 協作</span></div><h3>用 AGENTS.md 記錄專案規則</h3><p>把檔案位置、筆記格式和修改流程寫下來，下次新增內容時就能沿用。</p><a href="notes/agents-project-rules.html">閱讀筆記<span class="sr">：用 AGENTS.md 記錄專案規則</span></a></article></div><p id="empty" class="empty" hidden>找不到符合的筆記，請更換關鍵字或分類。</p></section><section class="rule-box"><div><h2>如何新增筆記</h2><p>在 notes.json 加入一篇筆記，再執行建置程式，就會產生新頁面和首頁連結。內容欄位與檔案放置方式寫在 AGENTS.md。</p></div><a href="AGENTS.md">查看新增內容的規則 →</a></section></main><footer>Study Notes · Homework 9 · 生成式 AI 課程作業</footer><script src="assets/main.js"></script></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="整理 Prompt、RAG 和 AGENTS.md 的課程筆記，附上範例與練習。"
+  >
+
+  <title>Study Notes｜生成式 AI 學習筆記</title>
+
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">跳到內容</a>
+
+  <header class="top">
+    <a class="brand" href="index.html">
+      S
+      <span>Study Notes</span>
+    </a>
+
+    <a href="AGENTS.md">專案規則 AGENTS.md ↗</a>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">生成式 AI 課程筆記</p>
+
+        <h1>
+          生成式 AI<br>
+          <em>學習筆記</em>
+        </h1>
+
+        <p class="intro">
+          這裡整理 Prompt、RAG 和專案規則的重點。
+          每篇都有說明、例子和練習，方便之後複習。
+        </p>
+      </div>
+
+      <aside class="hero-side">
+        <p>目前整理的主題</p>
+
+        <strong>
+          Prompt、RAG<br>
+          與 AGENTS.md
+        </strong>
+
+        <div class="steps">
+          <span>01 重點說明</span>
+          <span>02 範例</span>
+          <span>03 練習</span>
+        </div>
+      </aside>
+    </section>
+
+    <section aria-labelledby="notes-title">
+      <div class="section-head">
+        <h2 id="notes-title">學習筆記</h2>
+
+        <span id="count" aria-live="polite">
+          顯示 3 篇筆記
+        </span>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" aria-label="筆記分類">
+          <button
+            type="button"
+            data-filter="全部"
+            aria-pressed="true"
+          >
+            全部
+          </button>
+
+          <button
+            type="button"
+            data-filter="Prompt"
+            aria-pressed="false"
+          >
+            Prompt
+          </button>
+
+          <button
+            type="button"
+            data-filter="RAG"
+            aria-pressed="false"
+          >
+            RAG
+          </button>
+
+          <button
+            type="button"
+            data-filter="AI 協作"
+            aria-pressed="false"
+          >
+            AI 協作
+          </button>
+        </div>
+
+        <label>
+          <span class="sr">搜尋筆記</span>
+
+          <input
+            id="search"
+            type="search"
+            placeholder="搜尋標題或關鍵字…"
+          >
+        </label>
+      </div>
+
+      <div class="grid">
+        <article class="card" data-category="Prompt">
+          <div class="section-head">
+            <span class="num">01</span>
+            <span class="tag">Prompt</span>
+          </div>
+
+          <h3>Prompt 怎麼寫比較清楚</h3>
+
+          <p>
+            把背景、需求和格式說清楚，再檢查 AI 有沒有照著回答。
+          </p>
+
+          <a href="notes/prompt-basics.html">
+            閱讀筆記
+            <span class="sr">：Prompt 怎麼寫比較清楚</span>
+          </a>
+        </article>
+
+        <article class="card" data-category="RAG">
+          <div class="section-head">
+            <span class="num">02</span>
+            <span class="tag">RAG</span>
+          </div>
+
+          <h3>RAG 如何找到資料再回答</h3>
+
+          <p>
+            整理資料、找出相關片段，再請模型依照找到的內容回答。
+          </p>
+
+          <a href="notes/rag-workflow.html">
+            閱讀筆記
+            <span class="sr">：RAG 如何找到資料再回答</span>
+          </a>
+        </article>
+
+        <article class="card" data-category="AI 協作">
+          <div class="section-head">
+            <span class="num">03</span>
+            <span class="tag">AI 協作</span>
+          </div>
+
+          <h3>用 AGENTS.md 記錄專案規則</h3>
+
+          <p>
+            把檔案位置、筆記格式和修改流程寫下來，
+            下次新增內容時就能沿用。
+          </p>
+
+          <a href="notes/agents-project-rules.html">
+            閱讀筆記
+            <span class="sr">：用 AGENTS.md 記錄專案規則</span>
+          </a>
+        </article>
+      </div>
+
+      <p id="empty" class="empty" hidden>
+        找不到符合的筆記，請更換關鍵字或分類。
+      </p>
+    </section>
+
+    <section class="rule-box">
+      <div>
+        <h2>如何新增筆記</h2>
+
+        <p>
+          在 notes.json 加入一篇筆記，再執行建置程式，
+          就會產生新頁面和首頁連結。
+          內容欄位與檔案放置方式寫在 AGENTS.md。
+        </p>
+      </div>
+
+      <a href="AGENTS.md">查看新增內容的規則 →</a>
+    </section>
+  </main>
+
+  <footer>
+    Study Notes · Homework 9 · 生成式 AI 課程作業
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
